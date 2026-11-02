@@ -1,5 +1,6 @@
 \documentclass[UTF8,fontset=fandol,a4paper,10pt]{ctexart}
 \usepackage[margin=22mm]{geometry}
+\usepackage{graphicx,pdfpages}
 \usepackage[colorlinks=true,urlcolor=blue]{hyperref}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{6pt}
@@ -42,4 +43,26 @@ GPA：3.8。
 分析工具：R、SAS、MySQL、Excel。\\ 语言：中文、英文。\\ 个人兴趣：舞蹈、冲浪、百老汇音乐剧；我的猫叫 Erer。
 \section*{联系与资料}
 Phone number: +86 15711312382\\ Email: \href{mailto:qiaoyixu2000@gmail.com}{qiaoyixu2000@gmail.com}\\ Address: Beijing, China
+\clearpage
+\includepdf[pages=-]{myresume.pdf}
+\clearpage
+\section*{数据分析作品：纽约州 NOAA 气象数据}
+以下图表由 Python 基于 2005-2010 年的 10,000 条完整气象样本生成。按月份汇总全部年份；温度单位为摄氏度，降水单位为毫米。图表用于描述该固定样本的季节性特征。
+\href{https://p8105.com/dataset_noaa.html}{数据来源与说明}；完整样本及处理方法随网站源码提供。
+\subsection*{1. 每月最低温度分布}
+\includegraphics[width=\linewidth]{chart-box.pdf}
+箱体表示第 25 至第 75 百分位数，中线表示中位数，须线延伸至 1.5 倍四分位距以内的观测值，圆点表示其余观测值。暖季的最低温度整体较高，冬季分布较低且离散程度更大。
+\href{https://joycexu2000-web.github.io/personal-homepage-python/plotly.html}{查看在线交互图表}
+\clearpage
+\section*{数据分析作品（续）}
+\subsection*{2. 每月平均最高温度}
+\includegraphics[width=\linewidth]{chart-temperature.pdf}
+每个点表示样本中对应月份的最高温度均值。7 月附近达到高值，冬季较低，显示出清晰的季节性变化。各月份样本量不同，均值未作站点或年份加权，不能据此推断长期气候趋势。
+\href{https://joycexu2000-web.github.io/personal-homepage-python/plotly.html}{查看在线交互图表}
+\clearpage
+\section*{数据分析作品（续）}
+\subsection*{3. 每月平均日降水量}
+\includegraphics[width=\linewidth]{chart-precipitation.pdf}
+柱高表示样本中对应月份的平均日降水量，包含无降水观测，并非月累计降水量。该固定样本中 10 月的均值最高；月份之间的差异仅作描述性展示，不代表统计检验结果。
+\href{https://joycexu2000-web.github.io/personal-homepage-python/dashboard.html}{查看在线 Dashboard}。PDF 为静态展示；悬停、缩放和图例筛选请使用在线版本。
 \end{document}
