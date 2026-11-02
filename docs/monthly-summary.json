@@ -1,0 +1,86 @@
+[
+  {
+    "month": 1,
+    "name": "January",
+    "count": 815,
+    "tmax_mean": 0.37190184049079755,
+    "prcp_mean": 2.59680981595092
+  },
+  {
+    "month": 2,
+    "name": "February",
+    "count": 768,
+    "tmax_mean": 0.9584635416666667,
+    "prcp_mean": 2.073046875
+  },
+  {
+    "month": 3,
+    "name": "March",
+    "count": 855,
+    "tmax_mean": 5.994385964912281,
+    "prcp_mean": 2.942105263157895
+  },
+  {
+    "month": 4,
+    "name": "April",
+    "count": 842,
+    "tmax_mean": 15.00665083135392,
+    "prcp_mean": 2.830522565320665
+  },
+  {
+    "month": 5,
+    "name": "May",
+    "count": 866,
+    "tmax_mean": 19.96177829099307,
+    "prcp_mean": 2.3677829099307157
+  },
+  {
+    "month": 6,
+    "name": "June",
+    "count": 832,
+    "tmax_mean": 24.99627403846154,
+    "prcp_mean": 4.025600961538461
+  },
+  {
+    "month": 7,
+    "name": "July",
+    "count": 834,
+    "tmax_mean": 27.092086330935253,
+    "prcp_mean": 4.030695443645084
+  },
+  {
+    "month": 8,
+    "name": "August",
+    "count": 863,
+    "tmax_mean": 26.47497103128621,
+    "prcp_mean": 3.6640787949015063
+  },
+  {
+    "month": 9,
+    "name": "September",
+    "count": 852,
+    "tmax_mean": 22.549178403755867,
+    "prcp_mean": 2.978638497652582
+  },
+  {
+    "month": 10,
+    "name": "October",
+    "count": 871,
+    "tmax_mean": 15.186567164179104,
+    "prcp_mean": 4.869575200918485
+  },
+  {
+    "month": 11,
+    "name": "November",
+    "count": 772,
+    "tmax_mean": 9.61839378238342,
+    "prcp_mean": 2.687823834196891
+  },
+  {
+    "month": 12,
+    "name": "December",
+    "count": 830,
+    "tmax_mean": 2.206265060240964,
+    "prcp_mean": 3.4130120481927713
+  }
+]
