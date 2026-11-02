@@ -10,7 +10,7 @@ Qiaoyi (Joyce) Xu 的个人主页，包含个人介绍、英文简历与气象�
 
 ## 实现
 
-**四个网页、个人信息正文、数据统计和交互图表均由 Python 生成。** 项目不需要 R、R Markdown、Quarto 或 Pandoc。浏览器显示标准 HTML/CSS/JavaScript；PDF 由 Python 生成 LaTeX 源文件，再调用 XeLaTeX 编译。
+**四个网页、个人信息正文、数据统计和交互图表均由 Python 生成**。浏览器显示标准 HTML/CSS/JavaScript；PDF 由 Python 生成 LaTeX 源文件，再调用 XeLaTeX 编译。
 
 `build.py` 是统一入口。它读取 `profile.json` 和 `weather.csv`，重新计算 12 个月的统计量，使用 Python Plotly 创建三种图表，再生成主页、简历、图表页和仪表板。简历沿用本人已确认的版式与字体。所有页面使用站内相对链接。
 
