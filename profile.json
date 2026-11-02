@@ -1,0 +1,139 @@
+{
+  "name_zh": "徐乔依",
+  "name_en": "Qiaoyi Xu",
+  "nickname": "Joyce",
+  "resume_name": "Qiaoyi(Joyce) Xu",
+  "phone": "+86 15711312382",
+  "email": "qiaoyixu2000@gmail.com",
+  "address": "Beijing, China",
+  "github": "https://github.com/joycexu2000-web",
+  "linkedin": "https://www.linkedin.com/in/qiaoyi-xu-99b8091b9/",
+  "repository": "https://github.com/joycexu2000-web/personal-homepage-python",
+  "site_url": "https://joycexu2000-web.github.io/personal-homepage-python/",
+  "mission_zh": "公共卫生连接人群健康与数据证据。我希望运用流行病学和数据分析知识，为改善健康作出贡献。",
+  "bio_zh": "我叫 Qiaoyi Xu（Joyce），家乡是北京。目前在北京大学攻读流行病学与卫生统计学博士学位，此前在哥伦比亚大学和马萨诸塞大学阿默斯特分校学习公共卫生、流行病学与数学。我的职业目标是将所学用于健康领域，帮助人们改善健康。",
+  "education": [
+    {
+      "school": "Peking University, Beijing, China",
+      "school_zh": "北京大学 · Beijing, China",
+      "period": "Sep. 2026-Expected Jul. 2030",
+      "period_zh": "2026 年 9 月至预计 2030 年 7 月",
+      "degree": "Doctor of Philosophy in Epidemiology and Biostatistics",
+      "gpa": ""
+    },
+    {
+      "school": "Columbia University, New York, NY",
+      "school_zh": "哥伦比亚大学 · New York, NY",
+      "period": "Sep. 2021-May 2023",
+      "period_zh": "2021 年 9 月至 2023 年 5 月",
+      "degree": "Master of Public Health in Epidemiolog, Certificate in Applied Biostatistics",
+      "gpa": "3.93"
+    },
+    {
+      "school": "University of Massachusetts Amherst, Amherst, MA",
+      "school_zh": "马萨诸塞大学阿默斯特分校 · Amherst, MA",
+      "period": "Sep. 2018-May 2021",
+      "period_zh": "2018 年 9 月至 2021 年 5 月",
+      "degree": "Bachelor of Science in Public Health Sciences and Mathematics, Double Major",
+      "gpa": "3.8"
+    }
+  ],
+  "jobs": [
+    {
+      "company": "Pharmaron Clinical",
+      "period": "July 2023-August 2026",
+      "roles": [
+        {
+          "title": "Biostatistician",
+          "bullets": [
+            "Participated in several clinical trial projects, including Phase I/II studies, Bioequivalence (BE) studies, Investigator-Initiated Trials (IITs), and statistical analyses for FDA IND application support. Indications include Multiple Myeloma, Transfusion-dependent β-thalassemia, Diabetic Ulcers, Psoriasis, etc.;",
+            "Generated critical statistical documents: statistical analysis plans (SAPs), Table, Listing, and Figure (TLF) templates, and Protocol Deviation Handling and Reporting Procedure, ensuring compliance with ICH and CDE guidelines;",
+            "Reviewed study protocols, programmed TLF deliverables, population definition documents, and cross-functional documents such as Case Report Forms (CRFs) and other data management-related documents."
+          ]
+        }
+      ],
+      "home_label": "Pharmaron Clinical · Biostatistician",
+      "period_zh": "2023 年 7 月至 2026 年 8 月",
+      "summary_zh": "参与 I/II 期临床试验、生物等效性研究、研究者发起试验及 FDA IND 申请支持分析；编写 SAP、TLF 模板等统计文件，审核研究方案与相关交付文件。"
+    },
+    {
+      "company": "Pfizer Inc, New York, NY",
+      "period": "June-Aug. 2022",
+      "roles": [
+        {
+          "title": "-Epidemiology Research Assistant, Medical Development and Scientific/Clinical Affairs",
+          "bullets": [
+            "Provided critical epidemiology supports in the development of the Lyme disease vaccination",
+            "Conducted an individual project of Systematic Literature Review in Canada tick surveillance",
+            "Analyzed database used by SAS and presented results"
+          ]
+        }
+      ],
+      "home_label": "Pfizer · 流行病学研究助理",
+      "period_zh": "2022 年 6–8 月，纽约",
+      "summary_zh": "支持莱姆病疫苗相关流行病学研究，开展加拿大蜱监测系统文献综述，使用 SAS 分析数据并汇报结果。"
+    },
+    {
+      "company": "Frost and Sullivan, Shanghai, China",
+      "period": "Dec. 2021-Feb. 2022",
+      "roles": [
+        {
+          "title": "-Consulting Analyst Intern",
+          "bullets": [
+            "Assisted in data collection for programs",
+            "Made slides and presentation to support market analysis of company",
+            "Participate in expert interviews and write interview minutes"
+          ]
+        }
+      ],
+      "home_label": "Frost & Sullivan · 咨询分析实习生",
+      "period_zh": "2021 年 12 月至 2022 年 2 月，上海",
+      "summary_zh": "参与资料收集、市场分析展示及专家访谈纪要整理。"
+    },
+    {
+      "company": "National Center for Medical Service Administration, Beijing, China",
+      "period": "July-Sept. 2020",
+      "roles": [
+        {
+          "title": "-Data Analyst Intern",
+          "bullets": [
+            "Collected Nucleic Acid Test data from 20 hospitals/health centers everyday",
+            "Organized daily work dynamics and analyzed Nucleic Acid Test data",
+            "Write daily reports about COVID-19 according to the results of analyzing data"
+          ]
+        }
+      ],
+      "home_label": "National Center for Medical Service Administration · 数据分析实习",
+      "period_zh": "2020 年 7–9 月，北京",
+      "summary_zh": "收集核酸检测数据、开展分析并撰写日报。"
+    },
+    {
+      "company": "Chinese Center for Disease Control and Prevention, Beijing, China",
+      "period": "June-Aug. 2019",
+      "roles": [
+        {
+          "title": "-Data Analyst Intern, office for major projects",
+          "bullets": [
+            "Collected data from many different provinces about air quality and water quality",
+            "Analyzed prior air quality data and discussed with supervisor",
+            "Learned how to write report according to the results of analyzing data"
+          ]
+        },
+        {
+          "title": "-Intern, shielded room",
+          "bullets": [
+            "Disseminate public health awareness across primary and middle school children and created poster competition for children ages 6-15, related with how to protect environment.",
+            "Prepared meeting that we invited many professors to have lecture about environmental health knowledge for children and parents."
+          ]
+        }
+      ],
+      "home_label": "中国疾病预防控制中心 · 数据分析与健康传播实习",
+      "period_zh": "2019 年 6–8 月，北京",
+      "summary_zh": "收集和分析环境健康相关数据，参与环境健康科普活动。"
+    }
+  ],
+  "languages": "Fluent in Mandarin Chinese and English",
+  "technical": "SAS(Advanced), R (Advanced), MySQL(advanced), Excel (Advanced)",
+  "tools_home": "R、SAS、MySQL、Excel。",
+  "hobbies_zh": "舞蹈、冲浪、百老汇音乐剧；我的猫叫 Erer。"
+}
