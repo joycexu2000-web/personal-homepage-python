@@ -223,7 +223,7 @@ def resume_tex(p: dict) -> str:
 def home_tex(p: dict) -> str:
     t=tex_escape
     lines=[r"\documentclass[UTF8,fontset=fandol,a4paper,10pt]{ctexart}",r"\usepackage[margin=22mm]{geometry}",
-           r"\usepackage[colorlinks=true,urlcolor=blue]{hyperref}",r"\setlength{\parindent}{0pt}",
+           r"\usepackage{graphicx,pdfpages}",r"\usepackage[colorlinks=true,urlcolor=blue]{hyperref}",r"\setlength{\parindent}{0pt}",
            r"\setlength{\parskip}{6pt}",r"\title{"+t(p["name_zh"])+"}",r"\author{"+t(p["nickname"])+"}",r"\date{}",
            r"\begin{document}",r"\maketitle",r"\section*{关于我}",t(p["bio_zh"]),r"\section*{教育背景}"]
     for item in p["education"]:
@@ -235,7 +235,59 @@ def home_tex(p: dict) -> str:
               r"\href{"+p["site_url"]+r"plotly.html}{Plotly} · \href{"+p["site_url"]+"dashboard.html}{Dashboard}",
               r"\section*{技能与兴趣}","分析工具："+t(p["tools_home"])+r"\\ 语言：中文、英文。\\ 个人兴趣："+t(p["hobbies_zh"]),
               r"\section*{联系与资料}","Phone number: "+t(p["phone"])+r"\\ Email: \href{mailto:"+p["email"]+"}{"+t(p["email"])+r"}\\ Address: "+t(p["address"]),r"\end{document}"]
+    lines[-1:] = [r"\clearpage", r"\includepdf[pages=-]{myresume.pdf}",
+                  r"\clearpage", r"\section*{数据分析作品：纽约州 NOAA 气象数据}",
+                  "以下图表由 Python 基于 2005-2010 年的 10,000 条完整气象样本生成。按月份汇总全部年份；温度单位为摄氏度，降水单位为毫米。图表用于描述该固定样本的季节性特征。",
+                  r"\href{https://p8105.com/dataset_noaa.html}{数据来源与说明}；完整样本及处理方法随网站源码提供。",
+                  r"\subsection*{1. 每月最低温度分布}",
+                  r"\includegraphics[width=\linewidth]{chart-box.pdf}",
+                  "箱体表示第 25 至第 75 百分位数，中线表示中位数，须线延伸至 1.5 倍四分位距以内的观测值，圆点表示其余观测值。暖季的最低温度整体较高，冬季分布较低且离散程度更大。",
+                  r"\href{"+p["site_url"]+r"plotly.html}{查看在线交互图表}",
+                  r"\clearpage",r"\section*{数据分析作品（续）}",r"\subsection*{2. 每月平均最高温度}",
+                  r"\includegraphics[width=\linewidth]{chart-temperature.pdf}",
+                  "每个点表示样本中对应月份的最高温度均值。7 月附近达到高值，冬季较低，显示出清晰的季节性变化。各月份样本量不同，均值未作站点或年份加权，不能据此推断长期气候趋势。",
+                  r"\href{"+p["site_url"]+r"plotly.html}{查看在线交互图表}",
+                  r"\clearpage",r"\section*{数据分析作品（续）}",r"\subsection*{3. 每月平均日降水量}",
+                  r"\includegraphics[width=\linewidth]{chart-precipitation.pdf}",
+                  "柱高表示样本中对应月份的平均日降水量，包含无降水观测，并非月累计降水量。该固定样本中 10 月的均值最高；月份之间的差异仅作描述性展示，不代表统计检验结果。",
+                  r"\href{"+p["site_url"]+r"dashboard.html}{查看在线 Dashboard}。PDF 为静态展示；悬停、缩放和图例筛选请使用在线版本。",
+                  r"\end{document}"]
     return "\n".join(lines)
+
+
+def static_charts(rows: list[dict], summary: list[dict]) -> None:
+    """Render vector figures from the same data used by the interactive pages."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10,
+                         "axes.spines.top": False, "axes.spines.right": False,
+                         "pdf.fonttype": 42})
+    names = ["chart-box", "chart-temperature", "chart-precipitation"]
+    titles = ["Minimum temperature distribution by month",
+              "Mean maximum temperature by month", "Mean daily precipitation by month"]
+    labels = ["Minimum temperature (°C)", "Mean maximum temperature (°C)",
+              "Mean daily precipitation (mm)"]
+    for i, name in enumerate(names):
+        fig, ax = plt.subplots(figsize=(8.2, 5.0), layout="constrained")
+        if i == 0:
+            values = [[r["tmin"] for r in rows if r["month"] == m] for m in range(1, 13)]
+            boxes = ax.boxplot(values, patch_artist=True, tick_labels=MONTHS,
+                               medianprops={"color": "#203d49"},
+                               flierprops={"markersize": 2, "alpha": 0.35})
+            for box, color in zip(boxes["boxes"], COLORS):
+                box.set_facecolor(color)
+                box.set_alpha(0.7)
+        elif i == 1:
+            ax.scatter(range(1,13), [x["tmax_mean"] for x in summary], c=COLORS, s=55)
+        else:
+            ax.bar(range(1,13), [x["prcp_mean"] for x in summary], color=COLORS, width=0.72)
+        ax.set_xticks(range(1,13), MONTHS, rotation=45, ha="right")
+        ax.set(xlabel="Month", ylabel=labels[i], title=titles[i])
+        ax.grid(axis="y", alpha=0.18)
+        ax.set_axisbelow(True)
+        fig.savefig(OUT / (name + ".pdf"))
+        plt.close(fig)
 
 
 def compile_pdfs() -> None:
@@ -244,7 +296,7 @@ def compile_pdfs() -> None:
         engine = "/Library/TeX/texbin/xelatex"
     if not engine:
         raise RuntimeError("XeLaTeX is required for --pdf. Install MacTeX or TeX Live with ctex/Fandol.")
-    for filename in ("index.tex", "myresume.tex"):
+    for filename in ("myresume.tex", "index.tex"):
         for _ in range(2):
             run = subprocess.run([engine,"-interaction=nonstopmode","-halt-on-error",filename],
                                  cwd=OUT,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
@@ -270,6 +322,7 @@ def build(pdf: bool = False) -> None:
     for name in ("portrait.jpeg", "home.css"):
         shutil.copy2(ROOT / name, OUT / name)
     if pdf:
+        static_charts(rows, summary)
         compile_pdfs()
     print("Built 4 pages with Python; recomputed 12 monthly summaries from 10,000 rows.")
     if pdf:
